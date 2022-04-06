@@ -7,10 +7,10 @@ name = "pypi"
 fastapi = {extras = ["all"], version = "*"}
 alembic = "*"
 mysql-connector-python = "*"
-sqlalchemy = "*"
 pytest = "*"
 python-dotenv = "*"
 uvicorn = "*"
+SQLAlchemy = "*"
 
 [dev-packages]
 black = "*"
