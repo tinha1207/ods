@@ -4,10 +4,19 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+<<<<<<< HEAD
 fastapi = "*"
 requests = "*"
 python-multipart = "*"
+=======
+fastapi = {extras = ["all"], version = "*"}
+alembic = "*"
+mysql-connector-python = "*"
+pytest = "*"
+python-dotenv = "*"
+>>>>>>> 6c46d61b2ca4519d5f9b401532f12a6520325e44
 uvicorn = "*"
+SQLAlchemy = "*"
 
 [dev-packages]
 
