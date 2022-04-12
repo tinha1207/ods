@@ -4,19 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = {extras = ["all"], version = "*"}
-alembic = "*"
-mysql-connector-python = "*"
-sqlalchemy = "*"
-pytest = "*"
-python-dotenv = "*"
+fastapi = "*"
+requests = "*"
+python-multipart = "*"
 uvicorn = "*"
 
 [dev-packages]
-black = "*"
 
 [requires]
 python_version = "3.9"
-
-[pipenv]
-allow_prereleases = true
