@@ -1,8 +1,8 @@
-"""inital migration
+"""initial migration
 
-Revision ID: a91425042b44
+Revision ID: 6ac733de75c3
 Revises: 
-Create Date: 2022-04-11 23:01:01.697282
+Create Date: 2022-04-15 17:46:29.960237
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'a91425042b44'
+revision = '6ac733de75c3'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -46,7 +46,8 @@ def upgrade():
     sa.Column('updated_datetime', sa.DateTime(timezone=True), server_default=sa.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'), nullable=True),
     sa.ForeignKeyConstraint(['address_id'], ['address.id'], ondelete='CASCADE'),
     sa.ForeignKeyConstraint(['transaction_id'], ['transaction.id'], ondelete='CASCADE'),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('name', 'address_id', 'company', name='uix_record')
     )
     # ### end Alembic commands ###
 
